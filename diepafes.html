@@ -5,120 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Diepafes</title> 
   <link rel="stylesheet" href="stylehome.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
   <script>
     var dt = new Date();
     document.getElementById('date-time').innerHTML=dt;
   </script>
+
 </head>
 <body>
   <header>
     <ul class="topnav">
       <li><a  href="diepafes.html">Home</a></li>
       <li><a href="#video">News</a></li>
-      <li><a href="#events">Events</a></li>
+      <li><a href="#events">Messages</a></li>
       <li class="right"><a href="#footer">About</a></li>
     </ul>
     
   </header>
 
-  <table >
+  <table class="table1">
+   
     <tr>
       <td>
-        <section id="'video">
-          <iframe width="760" height="560" src="https://www.youtube.com/embed/3lK0W7WefLA"> </iframe>
-        </section>
+        <video id="vid" autoplay></video>
+        <script>
+          navigator.mediaDevices.getUserMedia({
+            video:true
+          })
+          .then(stream =>{
+            document.getElementById("vid").srcObject = stream; 
+          })
+        </script>
       </td>
+
+
+
       <div class="scroll tbody" id="events" >
       <td class="td">
         <table class="table ">
+
           <tr>
-            <th class="th1">Events</th>
-          </tr>
-          <tr>
-            <td id="date-time" class="td1">
-              <table >
-                <td class="tdtime" >18.31</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.30</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.25</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.23</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.19</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.18</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.16</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.09</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.09</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td class="td1">
-              <table >
-                <td class="tdtime" >18.08</td>
-                <td class="tdin"> A notification arrived</td>
-              </table>
-            </td>
+            <div class="container" >
+
+              <div class="header">
+                  <h1>Μηνύματα</h1>
+              </div>
+          
+              <div class="body">
+                  <p class="message">User 1: Καλησπέρα</p>
+                  <p class="message user_message">User 2: Γεια σας!</p>
+                  <p class="message">User 3: Χαιρετώ την παρέα</p>
+                  <p class="message user_message">User 4: Καλώς σας βρήκα</p>
+                  <p class="message">User 5: Hello</p>
+              </div>
+          
+              <div class="fouter">
+                  <form>
+                      <input class="inpu" type="text" name="">
+                      <button class="butt">SEND</button>
+                  </form>
+              </div>
+          
+          
+            </div>
+
+
           </tr>
         </table>
-      </td>
-    </div>
-
-    </tr>
 
   </table>
 
@@ -129,7 +83,7 @@
   <footer id="footer">
     <button class="button a">
       <span>
-       <a href=" "> Ερωφίλη Κώνστα </a >
+       <a href=" "> Ερωφίλη Κώνστα <br></a >
        </span> 
     </button>
     <button class="button a ">  
