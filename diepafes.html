@@ -4,116 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Diepafes</title> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@ionic/core@4.0.0/css/ionic.bundle.css"> 
   <link rel="stylesheet" href="stylehome.css">
+  <link rel="stylesheet" href="call.css">
+  <script type='text/javascript' src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
-
-  <script>
-    var dt = new Date();
-    document.getElementById('date-time').innerHTML=dt;
-  </script>
 
 </head>
 <body>
-  <header>
-    <ul class="topnav">
-      <li><a  href="diepafes.html">Home</a></li>
-      <li><a href="#video">News</a></li>
-      <li><a href="#events">Messages</a></li>
-      <li class="right"><a href="#footer">About</a></li>
-    </ul>
-    
-  </header>
+  <div class="navbar">
+    <a href="diepafes.html">Home</a>
+    <a href="#news">News</a>
+    <a href="#messages">Messages</a>
+    <a href="about.html">About</a>
+ </div>
 
-  <table class="table1">
+  <div class="Main_Container">
+    <div class="Video_Container">
+
+     
+
+        <div class="Video">
+            <video id="vid" autoplay></video>
+             <script>
+               navigator.mediaDevices.getUserMedia({
+               video:{
+                width: 900,
+                height: 500
+               }
+               
+                })
+               .then(stream =>{
+                 document.getElementById("vid").srcObject = stream; 
+                })
+              </script>
+        </div>
+        <div class="attendees">
+          <img src='pic.png' >
+          <img src='pic2.png'>
+          <img src='pic3.png'>
+          <img src='pic4.png'>
+          <img src='pic5.png'>
+          <img src='pic6.png'>
+        </div>
+         
+      </div>
+
+
    
-    <tr>
-      <td>
-        <video id="vid" autoplay></video>
-        <script>
-          navigator.mediaDevices.getUserMedia({
-            video:true
-          })
-          .then(stream =>{
-            document.getElementById("vid").srcObject = stream; 
-          })
-        </script>
-      </td>
+ 
+            <div class="Chat_Container">
+              <h1>Messages</h1>
+              <div class="chat_box" id="chat_box">
+                 
 
+                 <div class='message'>
+                  <span>Ιωάννα</span>
+                  <p>Ει! Πως πάει;</p>
+                 </div>
 
+                 <div class='message'>
+                  <span>Ερωφίλη</span>
+                  <p>Γεια σας παιδιά!</p>
+                 </div>
 
-      <div class="scroll tbody" id="events" >
-      <td class="td">
-        <table class="table ">
+                 <div class='message'>
+                  <span>Μαρία</span>
+                  <p>Καλημέρααααα</p>
+                 </div>
+                 <div class='message'>
+                  <span>Γεωργία</span>
+                  <p>Ωπ! Καλώς τους</p>
+                 </div>
 
-          <tr>
-            <div class="container" >
+                 <div class='message'>
+                  <span>Ελένη</span>
+                  <p>Τι κάνετε;</p>
+                 </div>
 
-              <div class="header">
-                  <h1>Μηνύματα</h1>
+                 <div class='message'>
+                  <span>Ειρήνη</span>
+                  <p>Θα ήθελα να κάνω μία ερώτηση</p>
+                 </div>
+                 <div class='message'>
+                  <span>Γιάννης</span>
+                  <p>Όμορφες καλησπέρες</p>
+                 </div>
+
+                 <div class='message'>
+                  <span>Σοφία</span>
+                  <p>Hi!</p>
+                 </div>
+
+                 <div class='message'>
+                  <span>Γιώργος</span>
+                  <p>Καλησπέρα</p>
+                 </div>
               </div>
-          
-              <div class="body">
-                  <p class="message">User 1: Καλησπέρα</p>
-                  <p class="message user_message">User 2: Γεια σας!</p>
-                  <p class="message">User 3: Χαιρετώ την παρέα</p>
-                  <p class="message user_message">User 4: Καλώς σας βρήκα</p>
-                  <p class="message">User 5: Hello</p>
-              </div>
-          
-              <div class="fouter">
-                  <form>
-                      <input class="inpu" type="text" name="">
-                      <button class="butt">SEND</button>
-                  </form>
-              </div>
-          
-          
+              <div class="message_input_box">
+                <input type='text' id="message_input" placeholder='Γράψτε το μήνυμά σας εδώ'>
+                <button id="message_submit" type="submit">
+                    <i class="fa-solid fa-paper-plane" style="font-size: 1.98em"></i>
+                </button>
             </div>
-
-
-          </tr>
-        </table>
-
-  </table>
-
-  <br>
-   <!-- https://www.youtube.com/watch?v=3lK0W7WefLA --> 
-  <!--<iframe width="550" height="360" src="https://www.youtube.com/embed/3lK0W7WefLA"> </iframe>
-   FOOTER -->
-  <footer id="footer">
-    <button class="button a">
-      <span>
-       <a href=" "> Ερωφίλη Κώνστα <br></a >
-       </span> 
-    </button>
-    <button class="button a ">  
-      <span>
-      <a href=" "> Ιωάννα Κατικαρίδου </a >
-      </span> 
-    </button>
-    <button class="button a ">
-      <span>
-        <a href=" "> Γεωργία Μίχου </a >
-        </span>  
-    </button>
-    <button class="button a"> 
-      <span>
-        <a href=" "> Μαρία Γεωργία <br> Γεωργιάδου </a >
-        </span>  
-    </button>
-    <button class="button a">
-      <span>
-        <a href=" "> Γεωργία Ειρήνη <br> Κοσμίδου </a >
-        </span>   
-    </button>
-    <button class="button a ">
-      <span>
-        <a href=" "> Ελένη Μανδάνα </a >
-        </span>  
-    </button>
-  </footer>
-
-
+  
+          <script src="call.js"></script>
+ 
 </body>
 </html> 
-
